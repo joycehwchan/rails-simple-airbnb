@@ -1,0 +1,11 @@
+<h1>All Flats</h1>
+
+<% if @flats.empty? %>
+  <h4 class='my-5'>Oops...Can't find anything.</h4>
+<% end %>
+
+<div class="row">
+  <% @flats.each do |flat| %>
+    <%= render 'flats/card', flat: flat%>
+  <% end %>
+</div>
