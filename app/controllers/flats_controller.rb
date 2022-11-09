@@ -10,7 +10,6 @@ class FlatsController < ApplicationController
   end
 
   def show
-    # generate_map
   end
 
   def new
@@ -50,11 +49,5 @@ class FlatsController < ApplicationController
 
   def flat_params
     params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests)
-  end
-
-  def generate_map
-    center = [@flat.latitude, @flat.longitude]
-    token = "pk.eyJ1IjoieWFubmx1Y2tsZWluIiwiYSI6ImNqd3VvZmh0eDAwZzk0YWxjYmx1bmFpaDcifQ.R6oqb2VcNqMXhDf3S1Pb3A"
-    url = "https://api.mapbox.com/geocoding/v5/mapbox.places/#{@flat.address}.json?proximity=ip&types=place%2Cpostcode%2Caddress&access_token=#{token}"
   end
 end

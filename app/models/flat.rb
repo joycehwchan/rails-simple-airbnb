@@ -4,4 +4,6 @@ class Flat < ApplicationRecord
   validates :picture_url, presence: true
   validates :price_per_night, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :number_of_guests, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :longitude, presence: true
+  validates :latitude, presence: true
 end
